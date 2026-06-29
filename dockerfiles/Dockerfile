@@ -31,7 +31,7 @@ RUN echo 'root:password' | chpasswd
 RUN useradd -m -s /bin/bash bioseq0 && echo 'bioseq0:level0pass' | chpasswd && \
     useradd -m -s /bin/bash bioseq1 && echo 'bioseq1:level1pass' | chpasswd
 
-COPY dir/home/ /home/
+COPY dockerfiles/dir/home/ /home/
 
 # Locking down permissions for users
 RUN for u in /home/bioseq*; do \
