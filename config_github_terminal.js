@@ -17,7 +17,7 @@ export const opts = {
 	// Current working directory
 	cwd: CWD, // Default: "/home/user",
 	// User id
-	uid: 1000,
+	uid: 1001,
 	// Group id
-	gid: 1000
+	gid: 1001
 };

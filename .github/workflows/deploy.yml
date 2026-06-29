@@ -11,13 +11,13 @@ on:
         type: string
         description: 'Path to the Dockerfile'
         required: true
-        default: 'dockerfiles/debian_mini'
+        default: 'dockerfiles/Dockerfile'
 
       IMAGE_SIZE:
         type: string
         description: 'Image size, 950M max'
         required: true
-        default: '750M'
+        default: '512M'
 
       DEPLOY_TO_GITHUB_PAGES:
         type: boolean
@@ -113,7 +113,7 @@ jobs:
       - run: sudo mkdir -p $DEPLOY_DIR
 
       # Build the i386 Dockerfile image.
-      - run: docker build . --tag $TAG --file ${{ github.event.inputs.DOCKERFILE_PATH }} --platform=i386
+      - run: docker build . --no-cache --tag $TAG --file ${{ github.event.inputs.DOCKERFILE_PATH }} --platform=i386
       
       # Run the docker image so that we can export the container.
       # Run the Docker container with the Google Public DNS nameservers: 8.8.8.8, 8.8.4.4
