@@ -1,6 +1,5 @@
 // The root OS image location, change to local filepath if serving locally
-export const diskImageUrl = "wss://disks.webvm.io/debian_buster_large_permis_fixed_01-06-2026.ext2";
-// The root filesystem backend type use "cloud" for serving remotely or "bytes" for serving locally
+export const diskImageUrl = "https://pub-942cefa95f43457eadfacb22a62f9a2e.r2.dev/bioseq-buster.ext2";
 export const diskImageType = "cloud";
 // Print an introduction message about the technology
 export const printIntro = true;
@@ -13,11 +12,11 @@ export const args = ["--login"];
 // Optional extra parameters
 export const opts = {
 	// Environment variables
-	env: ["HOME=/home/user", "TERM=xterm", "USER=user", "SHELL=/bin/bash", "EDITOR=vim", "LANG=en_US.UTF-8", "LC_ALL=C"],
+	env: ["HOME=/home/bioseq0", "TERM=xterm", "USER=bioseq0", "SHELL=/bin/bash", "EDITOR=vim", "LANG=en_US.UTF-8", "LC_ALL=C"],
 	// Current working directory
-	cwd: "/home/user",
+	cwd: "/home/bioseq0",
 	// User id
-	uid: 1000,
+	uid: 1001,
 	// Group id
-	gid: 1000
+	gid: 1001
 };
